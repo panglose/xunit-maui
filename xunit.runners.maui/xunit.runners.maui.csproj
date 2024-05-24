@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net6.0;net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net9.0;net9.0-android;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<OutputType>Library</OutputType>
@@ -45,14 +45,24 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Nerdbank.GitVersioning" Version="3.5.107">
+		<PackageReference Include="Nerdbank.GitVersioning" Version="3.6.133">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="xunit" Version="2.4.1" />
-		<PackageReference Include="xunit.runner.utility" Version="2.4.1" />
+		<PackageReference Include="xunit" Version="2.8.0" />
+		<PackageReference Include="xunit.runner.utility" Version="2.8.0" />
 		<!--<PackageReference Include="Microsoft.DotNet.XHarness.TestRunners.Xunit" Version="1.0.0-prerelease.21558.2" />-->
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.0-preview.4.24266.19" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.0-preview.4.24266.19" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0-preview.4.24266.19" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.0-preview.4.24266.19" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.0-preview.4.24266.19" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.0-preview.4.10690" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.0-preview.4.10690" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-preview.4.24266.19" />		
 	</ItemGroup>
+
+	
 
 	<ItemGroup>
 		<None Include="$(MSBuildThisFileDirectory)..\nuget.png" Pack="true" PackagePath="icon.png" />
